@@ -42,6 +42,15 @@ routerApp.controller('contentSeries2Contrlr', function($scope) {
 
 });
 
+routerApp.controller('sideMeduContrlr', function($scope) {
+    $scope.openNav = function() {
+        document.getElementById("mySidenav").style.width = "250px";
+    };
+
+     $scope.closeNav = function() {
+        document.getElementById("mySidenav").style.width = "0";
+    };
+});
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
 
@@ -50,28 +59,43 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
 
     // HOME STATES AND NESTED VIEWS ========================================
-        .state('series1', {
+        .state('home', {
             url: '/home',
             views: {
                 'head@':{
-                    templateUrl:'head-series1.html',
+                    templateUrl: 'homeHead.html'
+                },
+                'content@':{
+                    templateUrl: 'homeContent.html'
+                },
+                'sidemenu@':{
+                    templateUrl: 'sidemenu.html',
+                    controller: 'sideMeduContrlr'
+                }
+            }
+        })
+        .state('home.series1', {
+            url: '/series1',
+            views: {
+                'head@':{
+                    templateUrl:'headSeries1.html',
                     controller: 'headSeries1Contrlr'
                 },
                 'content@':{
-                    templateUrl:'content-series1.html',
+                    templateUrl:'contentSeries1.html',
                     controller: 'contentSeries1Contrlr'
                 }
             }
         })
-        .state('series2', {
+        .state('home.series2', {
             url: '/series2',
             views: {
                 'head@':{
-                    templateUrl:'head-series2.html',
+                    templateUrl:'headSeries2.html',
                     controller: 'headSeries2Contrlr'
                 },
                 'content@':{
-                    templateUrl:'content-series2.html',
+                    templateUrl:'contentSeries2.html',
                     controller: 'contentSeries2Contrlr'
                 }
             }
