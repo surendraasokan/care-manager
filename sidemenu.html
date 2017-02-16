@@ -6,13 +6,19 @@
 </head>
 <body>
 <!-- NAVIGATION -->
-<nav class="navbar" role="navigation">
-    <ul class="nav navbar-nav">
-        <li><a ui-sref="series1">Series1</a></li>
-        <li><a ui-sref="series2">Series2</a></li>
-        <li><a ui-sref="about">Link3</a></li>
-    </ul>
-</nav>
+
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
+
+        <a ui-sref="home.series1">Series1</a>
+        <a ui-sref="home.series2">Series2</a>
+        <a ui-sref="about">Link3</a>
+
+</div>
+
+
+<span style="font-size:30px;cursor:pointer" ng-click="openNav()">&#9776; open</span>
 
 </body>
 </html>

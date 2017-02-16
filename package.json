@@ -28,6 +28,7 @@
     "karma-jasmine": "^1.1.0",
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.2",
+    "less": "^2.7.2",
     "requirejs": "^2.3.2",
     "ui-bootstrap": "^0.1.10"
   },
